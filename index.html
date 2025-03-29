@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black flex sm:justify-cent text-gray-200 sm:justify-center sm:items-center min-h-screen p-4
+        before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-swirls-red.webp)]
+        before:inset-0
+        before:w-full
+        before:h-full
+        before:fixed
+        before:opacity-10
+        before:bg-cover
+        before:bg-center
+        before:bg-no-repeat
+        before:-z-10
+    ">
+  <input type="radio" name="theme" id="theme-0" class="sr-only peer/theme-0">
+  <input type="radio" name="theme" id="theme-1" class="sr-only peer/theme-1">
+  <input type="radio" name="theme" id="theme-2" class="sr-only peer/theme-2">
+  <input type="radio" name="theme" id="theme-3" class="sr-only peer/theme-3" checked>
+  <input type="radio" name="theme" id="theme-4" class="sr-only peer/theme-4">
+  <input type="radio" name="theme" id="theme-5" class="sr-only peer/theme-5">
+
+  <input type="radio" name="radio" id="radio-0" class="sr-only peer/radio-0" checkedX>
+  <input type="radio" name="radio" id="radio-1" class="sr-only peer/radio-1" checkedX>
+  <input type="radio" name="radio" id="radio-2" class="sr-only peer/radio-2" checkedX>
+  <input type="radio" name="radio" id="radio-3" class="sr-only peer/radio-3" checkedX>
+
+  <div class="grid gap-2 sm:gap-6 sm:grid-cols-[1.5fr_5rem_2fr] auto-rows-min [grid-template-areas:'settings'_'nav'_'panels'] 
+        sm:[grid-template-areas:'help_nav_settings'_'help_nav_security'_'help_newsletter_newsletter'] w-full max-w-4xl 
+            [&>*]:border
+            [&>*]:border-white/20
+            *:bg-black/20
+            *:backdrop-blur-md
+            *:transition-all
+            *:duration-300
+            hover:*:border-white/50
+            *:shadow-lg
+            *:rounded-xl
+            *:transition-all
+            *:duration-500
+            [&>section]:p-6
+            [&>section]:h-fit
+            [&>section]:scale-y-0
+            sm:[&>section]:scale-y-100
+            
+            [&>section]:origin-top
+            
+            [&>#panel-0]:origin-bottom
+            sm:[&>#panel-0]:scale-x-0
+            sm:[&>#panel-0]:origin-left
+
+            sm:[&_#panel-1]:origin-right
+            sm:[&>#panel-1]:scale-x-0
+
+            sm:[&>#panel-2]:origin-left
+            sm:[&>#panel-2]:scale-x-0
+
+            sm:[&_#panel-3]:scale-y-0
+            sm:[&_#panel-3]:scale-x-0
+            sm:[&_#panel-3]:origin-top-left
+
+            [&_h2]:font-bold
+            [&_h2]:text-lg 
+            [&_h2]:mb-2
+            [&_p]:text-sm
+            [&_p]:mb-3
+          
+            [&_button]:w-full
+            [&_button]:border
+            [&_button]:border-zinc-100/20
+            [&_button]:rounded
+            [&_button]:py-2
+            [&_button]:px-4
+            [&_button]:transition-all
+            [&_button]:duration-300
+            [&_button]:relative 
+            [&_button]:isolate
+            [&_button]:overflow-hidden
+            [&_button]:outline-none
+            [&_button]:ring-0
+
+            before:[&_button]:absolute
+            before:[&_button]:inset-0
+            before:[&_button]:bg-black/50
+            before:[&_button]:-z-10
+            before:[&_button]:opacity-0
+            before:[&_button]:transition-all
+            before:[&_button]:duration-300
+            hover:before:[&_button]:opacity-100
+            focus-visible:before:[&_button]:opacity-100
+
+            [&_input]:invisible
+            [&_input]:w-full
+            [&_input]:border
+            [&_input]:border-zinc-100/20
+            [&_input]:rounded
+            [&_input]:py-2
+            [&_input]:px-4
+            [&_input]:bg-transparent
+            [&_input]:outline-none
+            [&_input]:ring-0
+            [&_input]:transition-all
+            [&_input]:duration-300
+            focus-visible:[&_input]:bg-zinc-700
+            
+            [&_textarea]:invisible
+            [&_textarea]:w-full
+            [&_textarea]:border
+            [&_textarea]:border-zinc-100/20
+            [&_textarea]:rounded
+            [&_textarea]:py-2
+            [&_textarea]:px-4
+            [&_textarea]:bg-transparent
+            [&_textarea]:outline-none
+            [&_textarea]:ring-0
+            [&_textarea]:transition-all
+            [&_textarea]:duration-300
+            [&_textarea]:h-20
+            [&_textarea]:resize-none
+            focus-visible:[&_textarea]:bg-zinc-700
+
+            peer-checked/theme-0:[&_span]:text-cyan-500
+            peer-checked/theme-0:[&_button]:bg-cyan-600
+            peer-checked/theme-0:[&_#theme-toggle-0]:scale-150
+            peer-focus-within/theme-0:[&_#theme-toggle-0]:scale-150
+
+            peer-checked/theme-1:[&_span]:text-cyan-400
+            peer-checked/theme-1:[&_button]:bg-cyan-500
+            peer-checked/theme-1:[&_#theme-toggle-1]:scale-150
+            peer-focus-within/theme-1:[&_#theme-toggle-1]:scale-150
+
+            peer-checked/theme-2:[&_span]:text-yellow-400
+            peer-checked/theme-2:[&_button]:bg-yellow-500
+            peer-checked/theme-2:[&_button]:text-black
+            peer-checked/theme-2:[&_#theme-toggle-2]:scale-150
+            peer-focus-within/theme-2:[&_#theme-toggle-2]:scale-150
+
+            peer-checked/theme-3:[&_span]:text-violet-400
+            peer-checked/theme-3:[&_button]:bg-violet-500
+            peer-checked/theme-3:[&_#theme-toggle-3]:scale-150
+            peer-focus-within/theme-3:[&_#theme-toggle-3]:scale-150
+
+            peer-checked/theme-4:[&_span]:text-red-400
+            peer-checked/theme-4:[&_button]:bg-red-700
+            peer-checked/theme-4:[&_#theme-toggle-4]:scale-150
+            peer-focus-within/theme-4:[&_#theme-toggle-4]:scale-150
+
+            peer-checked/theme-5:[&_span]:text-lime-400
+            peer-checked/theme-5:[&_button]:bg-lime-500
+            peer-checked/theme-5:[&_button]:text-black
+            peer-checked/theme-5:[&_#theme-toggle-5]:scale-150
+            peer-focus-within/theme-5:[&_#theme-toggle-5]:scale-150
+
+
+            peer-checked/radio-0:[&_#panel-0]:scale-100
+            max-[640px]:peer-checked/radio-0:[&_#panel-0]:delay-500
+
+            peer-checked/radio-1:[&_#panel-1]:scale-100
+            max-[640px]:peer-checked/radio-1:[&_#panel-1]:delay-500
+            peer-checked/radio-1:[&_#panel-1_input]:visible
+            peer-checked/radio-1:[&_#panel-1_textarea]:visible
+            peer-focus-within/radio-1:[&_#label-1]:text-white
+            peer-focus-within/radio-1:before:[&_#label-1]:inset-0
+
+            peer-checked/radio-2:[&_#panel-2]:scale-100
+            max-[640px]:peer-checked/radio-2:[&_#panel-2]:delay-500
+            peer-checked/radio-2:[&_#panel-2_*]:pointer-events-auto
+            peer-focus-within/radio-2:[&_#label-2]:text-white
+            peer-focus-within/radio-2:before:[&_#label-2]:inset-0
+
+            peer-checked/radio-3:[&_#panel-3]:scale-100
+            max-[640px]:peer-checked/radio-3:[&_#panel-3]:delay-500
+            peer-checked/radio-3:[&_#panel-3_*]:pointer-events-auto
+            peer-checked/radio-3:[&_#panel-3_input]:visible
+            peer-checked/radio-3:[&_#panel-3_textarea]:visible
+            peer-focus-within/radio-3:[&_#label-3]:text-white
+            peer-focus-within/radio-3:before:[&_#label-3]:inset-0
+
+            peer-checked/radio-0:after:[&_nav]:translate-x-0
+            peer-checked/radio-1:after:[&_nav]:translate-x-[100%]
+            peer-checked/radio-2:after:[&_nav]:translate-x-[200%]
+            peer-checked/radio-3:after:[&_nav]:translate-x-[300%]
+
+
+            sm:peer-checked/radio-0:after:[&_nav]:translate-y-0
+            sm:peer-checked/radio-0:after:[&_nav]:translate-x-0
+            sm:peer-checked/radio-1:after:[&_nav]:translate-y-[100%]
+            sm:peer-checked/radio-1:after:[&_nav]:translate-x-0
+            sm:peer-checked/radio-2:after:[&_nav]:translate-y-[200%]
+            sm:peer-checked/radio-2:after:[&_nav]:translate-x-0
+            sm:peer-checked/radio-3:after:[&_nav]:translate-y-[300%]
+            sm:peer-checked/radio-3:after:[&_nav]:translate-x-0
+
+        ">
+
+    <nav style="--items:4" class="[grid-area:nav] flex sm:flex-col divide-x  sm:divide-x-0 sm:divide-y divide-white/20 items-center justify-between overflow-hidden relative 
+
+                after:absolute
+                after:bg-zinc-950/70
+                after:transition
+                after:duration-300
+                after:ease-in-out
+                after:-z-10
+
+                after:h-full
+                after:w-[calc((100/var(--items))*1%)]
+                after:translate-x-[-100%]
+
+                sm:after:w-full
+                sm:after:h-[calc((100/var(--items))*1%)]  
+                sm:after:translate-x-0           
+                sm:after:translate-y-[-100%]
+                
+                *:p-6
+                *:flex-1
+                [&_span]:text-4xl
+                  
+                *:grid
+                *:place-content-center
+                *:cursor-pointer
+                *:transition-all
+                *:duration-300
+                *:relative
+                *:isolate
+                *:overflow-hidden
+                before:*:absolute
+                before:*:inset-full
+                before:*:bg-black/30
+                before:*:transition-all 
+                before:*:duration-300
+                before:*:-z-30
+                hover:before:*:inset-0
+               
+                hover:*:text-white
+                focus-within:*:text-white
+            ">
+      <label id="label-0" for="radio-0"><span scale-up class="[--order:0] material-symbols-outlined">more_horiz</span></label>
+      <label id="label-1" for="radio-1"><span scale-up class="[--order:1] material-symbols-outlined">headset_mic</span></label>
+      <label id="label-2" for="radio-2"><span scale-up class="[--order:2] material-symbols-outlined">verified_user</span></label>
+      <label id="label-3" for="radio-3"><span scale-up class="[--order:3] material-symbols-outlined">drafts</span></label>
+    </nav>
+    <!-- panel - settings -->
+
+    <!-- theme toggle switches -->
+    <section id="panel-0" class="[grid-area:settings] !w-fit sm:!w-28">
+      <div class="flex flex-wrap items-center gap-4
+                        *:cursor-pointer
+                        *:rounded-full
+                        *:border
+                        *:border-white/50
+                        *:size-5
+                        *:shrink-0
+                        *:transition-all
+                        *:duration-300
+                        hover:*:scale-125
+                    ">
+        <label id="theme-toggle-0" for="theme-0" class="bg-black" aria-label="theme black"></label>
+        <label id="theme-toggle-1" for="theme-1" class="bg-cyan-600" aria-label="theme blue"></label>
+        <label id="theme-toggle-2" for="theme-2" class="bg-yellow-500" aria-label="theme yellow"></label>
+        <label id="theme-toggle-3" for="theme-3" class="bg-violet-500" aria-label="theme violet"></label>
+        <label id="theme-toggle-4" for="theme-4" class="bg-red-600" aria-label="theme red"></label>
+        <label id="theme-toggle-5" for="theme-5" class="bg-lime-600" aria-label="theme lime"></label>
+      </div>
+    </section>
+
+    <!-- panel - help -->
+    <section id="panel-1" class="[grid-area:panels] sm:[grid-area:help] 
+                [&>div]:pb-3
+                [&_label]:text-zinc-300
+                [&_label]:text-sm
+                [&_label]:block
+                [&_label]:mb-1
+            ">
+      <div class="flex  max-[400px]:flex-col gap-4">
+        <span class="material-symbols-outlined material-fill-1 text-cyan-500 text-6xl">headset_mic</span>
+        <div>
+          <h2>Hi!</h2>
+          <p>one of our consultants will assit you as soon as they can!</p>
+        </div>
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div>
+        <label for="tel">Phone Number (optional)</label>
+        <input type="text" id="">
+      </div>
+      <div>
+        <label for="msg">Message</label>
+        <textarea id="message"></textarea>
+      </div>
+      <button type="button">Start Chat</button>
+    </section>
+
+    <!-- panel - security -->
+    <section id="panel-2" class="[grid-area:panels] sm:[grid-area:security] flex max-[400px]:flex-col gap-4">
+      <span class="material-symbols-outlined material-fill-1  text-6xl">verified_user</span>
+      <div>
+        <h2>Show others that you are safe</h2>
+        <p>If you approve your profile with BankID, you are perceived as a safer person to trade with.</p>
+        <button type="button" class="!w-fit">Get Started</button>
+      </div>
+    </section>
+
+    <!-- panel - newsletter -->
+    <section id="panel-3" class="[grid-area:panels] sm:[grid-area:newsletter] flex max-[400px]:flex-col gap-4">
+      <span class="material-symbols-outlined material-fill-1  text-6xl">drafts</span>
+      <div>
+        <h2>Subscribe to the newsletter</h2>
+        <div class="flex sm:flex-row items-center gap-2">
+          <input type="email" id="email" placeholder="Enter email address" required class="sm:!w-fit">
+          <button type="button" class="!w-fit">OK</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- bg mask -->
+  <div class="fixed inset-0  -z-20 pointer-events-none transition duration-500
+            peer-checked/theme-0:bg-black
+            peer-checked/theme-1:bg-cyan-950
+            peer-checked/theme-2:bg-yellow-950
+            peer-checked/theme-3:bg-violet-950
+            peer-checked/theme-4:bg-red-950
+            peer-checked/theme-5:bg-lime-950
+        "></div>
+</body>
+</html>
